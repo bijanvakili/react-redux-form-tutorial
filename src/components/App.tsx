@@ -3,19 +3,26 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { combineForms } from 'react-redux-form';
 
-import MyForm from './my-form-component';
+import { MyForm, TimestampSubmission } from './MyForm';
 
-const initialUser = { name: '' };
+
+const initialTimestampValue: TimestampSubmission = {
+    date: '',
+    time: ''
+};
 
 interface Window { [key: string]: any }
 const hasDevTools = (w: Window) =>
     w['__REDUX_DEVTOOLS_EXTENSION__'] && w['__REDUX_DEVTOOLS_EXTENSION__']();
 
+
 const store = createStore(combineForms({
-    user: initialUser
+    timestamp: initialTimestampValue
 }), hasDevTools(window));
 
+
 export interface AppProps { compiler: string; framework: string; }
+
 
 export class App extends React.Component<AppProps, undefined> {
     render() {
