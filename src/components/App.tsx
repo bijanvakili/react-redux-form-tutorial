@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { combineForms } from 'react-redux-form';
 
-import MyForm from './components/my-form-component';
+import MyForm from './my-form-component';
 
 const initialUser = { name: '' };
 

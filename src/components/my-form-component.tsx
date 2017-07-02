@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { Control, Form } from 'react-redux-form';
 
 interface Submission {
