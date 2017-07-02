@@ -8,6 +8,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-redux@^4.4.45":
+  version "4.4.45"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-4.4.45.tgz#afad851d8592119225aa6bcc402c7f6b9c7e4106"
+  dependencies:
+    "@types/react" "*"
+    redux "^3.6.0"
+
 "@types/react@*", "@types/react@^15.0.34":
   version "15.0.34"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.34.tgz#c4f7235f3d245216a706887b7d1ffedaf5b1dc06"
@@ -1909,7 +1916,7 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-redux@^3.7.1:
+redux@^3.6.0, redux@^3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.1.tgz#bfc535c757d3849562ead0af18ac52122cd7268e"
   dependencies:
