@@ -26,7 +26,10 @@ const store = createStore(
 );
 
 
-export interface AppProps { compiler: string; framework: string; }
+export interface AppProps {
+    compiler: string;
+    framework: string;
+}
 
 
 export class App extends React.Component<AppProps, undefined> {

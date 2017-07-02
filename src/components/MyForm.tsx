@@ -10,13 +10,16 @@ export interface FormSubmission {
     data: {
         timestamp: Timestamp
     }
-
 }
 
-class DatetimeControl extends React.Component {
+export interface DatetimeControlProps {
+    model: string;
+}
+
+class DatetimeControl extends React.Component<DatetimeControlProps, undefined> {
     render() {
         return (
-            <Fieldset model=".timestamp">
+            <Fieldset model={this.props.model}>
                 <div>
                     <label>Date</label>
                     <Control.text model=".date" />
@@ -39,7 +42,9 @@ export class MyForm extends React.Component {
     render() {
         return (
             <Form model="data" onSubmit={(val) => this.handleSubmit(val)}>
-                <DatetimeControl />
+
+                <DatetimeControl model=".timestamp" />
+
                 <button>Submit!</button>
             </Form>
         );
