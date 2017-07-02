@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { Control, Form } from 'react-redux-form';
+import { Control, Fieldset, Form } from 'react-redux-form';
 
-export interface TimestampSubmission {
+export interface Timestamp {
     date: string;
     time: string;
 }
 
-
-export class MyForm extends React.Component {
-    handleSubmit(val: TimestampSubmission) {
-        console.log(val);
+export interface FormSubmission {
+    data: {
+        timestamp: Timestamp
     }
 
+}
+
+class DatetimeControl extends React.Component {
     render() {
         return (
-            <Form model="timestamp" onSubmit={(val) => this.handleSubmit(val)}>
+            <Fieldset model=".timestamp">
                 <div>
                     <label>Date</label>
                     <Control.text model=".date" />
@@ -23,7 +25,22 @@ export class MyForm extends React.Component {
                     <label>Time</label>
                     <Control.text model=".time" />
                 </div>
-                    <button>Submit!</button>
+            </Fieldset>
+        );
+    }
+}
+
+
+export class MyForm extends React.Component {
+    handleSubmit(val: FormSubmission) {
+        console.log(val);
+    }
+
+    render() {
+        return (
+            <Form model="data" onSubmit={(val) => this.handleSubmit(val)}>
+                <DatetimeControl />
+                <button>Submit!</button>
             </Form>
         );
     }
