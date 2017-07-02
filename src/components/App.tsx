@@ -3,15 +3,13 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { combineForms } from 'react-redux-form';
 
-import { MyForm, FormSubmission } from './MyForm';
+import { MyForm, FormSubmission, defaultTimestamp } from './MyForm';
 
 
 const initialData: FormSubmission = {
     data: {
-        timestamp: {
-            date: '',
-            time: ''
-        }
+        timestampBirth: defaultTimestamp,
+        timestampGraduation: defaultTimestamp
     }
 };
 
